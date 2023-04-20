@@ -58,4 +58,10 @@ int main(){
     }
     if (f==1)
         cout << "Palindrome";
+    
+    // we use string to store no. which are greater than the long int dtype whose range is 10^18
+    // then we perform the logic of carry to add them 
+
+    // Use this to convert the string into integer
+    // s[s.size()-1] - '0'  simply subtract the number's ascii value with the ascii value of 0
 }
