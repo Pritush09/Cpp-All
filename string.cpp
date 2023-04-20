@@ -35,5 +35,27 @@ int main(){
 
     //  to append a character in the last of the string use push_back
     s.push_back(s[0]);
-    cout << endl << s;
+    cout << endl << s << endl;
+
+
+    /// palindrome half looping
+    cin >> s;
+    int n,f;
+    int size = s.size()/2;
+    for(int i=0;i<size;i++){
+        n = s.size() - 1 -i;
+        if (i!=n){
+            if (s[i]==s[n]){
+                continue;
+                f=1;
+            }else{
+                cout << "not palindrome";
+                break;
+                f=0;
+            }
+
+        }
+    }
+    if (f==1)
+        cout << "Palindrome";
 }
