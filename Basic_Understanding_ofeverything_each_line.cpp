@@ -1,6 +1,10 @@
 #include<iostream>
+
+// use #include<bits/stdc++.h> for all the competitive programming header files will be included and u dont have to include them individually 
+
 //anything begins with the hash is a preprocess statement
-//the first thing the compiler does when it gets a file isto preprocess all the preprocess statements 
+//the first thing the compiler does when it gets a file isto preprocess all the preprocess statements
+// using namespace std; # ye use karo agar harjagah std nahi use karna
 
 int main(){
     // this << these operators are basically a function 
