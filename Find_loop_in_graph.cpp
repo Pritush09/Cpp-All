@@ -7,8 +7,9 @@ int G[N][N];
 // for visited
 int visited[N];
 
-
-void DFS(int vertex){
+// keeping the track of the parent node inorder to keep track of the parent node from which the dfs coming
+bool DFS(int vertex , int parent){
+    bool isloopexists = false; // this is to keep the track of what is node returning after checking
     int i;
     //cout << vertex << endl;
     visited[vertex] = 1;
@@ -16,20 +17,20 @@ void DFS(int vertex){
          
         if (G[vertex][i]==1 && visited[i]!=1){
             //cout << "parent " << vertex << " child " << i << endl;
-            DFS(i);
+            isloopexists |= DFS(i, vertex); //this is for performing the or between the returning of all the child 
         }
-        else if (G[vertex][i]==1 && visited[i]==1){
-            //cout << "parent " << vertex << " child " << i << endl;
+        else if (i==parent){
             continue;
+        }
+        else if (i!=parent && G[vertex][i]==1 && visited[i]==1){
+            return true;
         }
         else{
             
             continue;
         }
     }
-
-    
-
+    return isloopexists;
 }
 
 
@@ -60,19 +61,19 @@ int main(){
 
     // Connected Components
 
-    int count=0;
+    bool isloopexists=false;
 
     for(int i=1; i<=V ; i++){
-        if (visited[i]!=1){
-            DFS(i);
-            count++;
-        }
-        else{
+        if (visited[i]==1){
             continue;
+        }
+        if (DFS(i,0)){
+            isloopexists=true;
+            break;
         }
     }
 
-    cout << count;
+    cout << isloopexists << endl;
     
 
 }
