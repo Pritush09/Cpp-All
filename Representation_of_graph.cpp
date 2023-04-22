@@ -8,6 +8,8 @@ using namespace std;
 // is always initialised with 0 we dont have to re intialised the values with 0
 
 int main(){
+    // Ajacency Matrix format 
+    // disadvantage space complexity O(n^2) & we cannot make a graph grater than (10^4x10^4)
     int V , E;
     cin >> V >> E;
     // we do +1 here bcz the input are according with the name of the vertex like 1,4 have edge so to represent it we will have to store it in 
