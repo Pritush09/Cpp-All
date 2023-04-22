@@ -58,6 +58,8 @@ int main(){
         cout << "\n\n";
     }
 
+    // Connected Components
+
     int count=0;
 
     for(int i=1; i<=V ; i++){
@@ -71,6 +73,8 @@ int main(){
     }
 
     cout << count;
+    
+
 }
 /* 8 5
    1 2
