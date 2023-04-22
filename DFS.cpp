@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+//it uses stack
 const int N = 1e3;
 int V , E;
 int G[N][N];
