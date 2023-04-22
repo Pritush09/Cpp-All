@@ -9,14 +9,17 @@ int visited[N];
 
 
 void DFS(int vertex){
+    /*Take action on the node after entering the node*/
     int i;
     cout << vertex << endl;
     visited[vertex] = 1;
     for(i=1 ; i<=V ; i++){
          
         if (G[vertex][i]==1 && visited[i]!=1){
+            /*take action on the child before entering the child*/
             cout << "parent " << vertex << " child " << i << endl;
             DFS(i);
+            /*Take action on the child after entering the child node*/
         }
         else if (G[vertex][i]==1 && visited[i]==1){
             cout << "parent " << vertex << " child " << i << endl;
@@ -27,9 +30,7 @@ void DFS(int vertex){
             continue;
         }
     }
-
-    
-
+    /*Take action on node after exiting the node*/
 }
 
 
