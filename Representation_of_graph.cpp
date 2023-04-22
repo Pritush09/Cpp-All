@@ -8,7 +8,7 @@ using namespace std;
 // is always initialised with 0 we dont have to re intialised the values with 0
 
 int main(){
-    // Ajacency Matrix format 
+    // ADJACENCY  Matrix INPUT FOR THE GRAPH
     // disadvantage space complexity O(n^2) & we cannot make a graph grater than (10^4x10^4)
     int V , E;
     cin >> V >> E;
@@ -39,4 +39,11 @@ int main(){
         }
         cout << "\n";
     }
+
+    cout << "\n\n\n";
+
+    // ADJACENCY  LIST INPUT FOR THE GRAPH | order of O(V + E) space complexity
+
+
+
 }
