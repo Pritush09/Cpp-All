@@ -1,5 +1,5 @@
-#include<iostream>
-
+#include<bits/stdc++.h>
+using namespace std;
 // use #include<bits/stdc++.h> for all the competitive programming header files will be included and u dont have to include them individually 
 
 //anything begins with the hash is a preprocess statement
@@ -9,10 +9,12 @@
 int main(){
     // this << these operators are basically a function 
     //cout is basically what we want to show on the screen 
-    std:: cout<<"HElloe" << std:: endl;
+    string s;
+    cin >> s;
+    cout<<"HElloe " << s;
     //this get function waits for the usser to press the enter button 
-    std:: cin.get();
 }
 //the main function is the special case for the which we dont have to return a typr value
 
 /// the cpp files only gets compiled the header files doesnt gets compiled at all 
+// ctrl + shift + b se output aega direct
