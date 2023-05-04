@@ -1,14 +1,82 @@
 #include<bits/stdc++.h>
 using namespace std;
+const int N=1e2;
+int V,E;
+int G[N][N];
+int Q[N];
+int f=-1,r=-1;
+int visited[N];
+
+void push(int value){
+    if (r==-1 && f==-1){
+        r=0;
+        f=0;
+        Q[r]=value;
+    }
+    else if(r==N){
+        cout  << "Overflow";
+    }
+
+    else{
+        r++;
+        Q[r]=value;
+    }
+}
+
+
+int pop(){
+    int re;
+    if (r==f==-1){
+        cout << "Underflow";
+        return -1;
+    }
+    else if (f>r){
+        return -1;
+    }
+    else{
+        re=Q[f];
+        f++;
+        return re;
+    }
+}
+
+bool presentinqueue(int val){
+    int i;
+    for(i=0;i<N;i++){
+        if (Q[i]==val){
+            return false;
+            break;
+        }
+    }
+    return true;
+}
+
+
+void BFS(int vertex){
+    int i,j;
+    //marking the node as visited
+    visited[vertex] = 1;
+    cout << vertex << " ";
+    // loading the childs into the queue
+    for(i=1;i<=V;i++){
+        if(G[vertex][i]==1 && visited[i]!=1 && presentinqueue(i)){
+            push(i);
+            //visited[i]=1;
+        }
+    }
+    j=pop();
+    if (j>0){
+        BFS(j);
+    }
+    else{
+        return;
+    }
+}
+
+
 
 int main(){
     cin >> V >> E;
-
-    for(int i=1; i<=V ; i++){
-        for(int j=1; j<=V ; j++){
-            G[i][j]=0;
-        }
-    }
 
     for(int i=1 ; i<= E ; i++){
         int v1 , v2;
@@ -25,5 +93,11 @@ int main(){
         }
         cout << "\n";
     }
+
+    cout << "\n\n";
+
+    BFS(1);
+
+
 
 }
