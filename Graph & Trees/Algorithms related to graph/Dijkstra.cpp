@@ -17,15 +17,17 @@ void DIJ(int n,int v){
 	Dist[v] = 0;// khudka khudke sangh distance 0 kiye 
 	visited[v] = 1;
 	for(c=2;c<=n;c++){
-		min = MAX;
+		min = MAX; 
+		//finding thee minimum
 		for(w=1;w<=n;w++){
 			if(Dist[w] < min && visited[w] != 1){
 				min = Dist[w];
-				u = w;
+				u = w; // u is the min so we have to aplly relaxation on u
 			}
 		}
 	
 		visited[u] = 1;
+		// relaxatin on u
 		for(w=1;w<=n;w++){
 			if(Dist[u] + G[u][w] < Dist[w] && visited[w] != 1){
 				Dist[w] = Dist[u] + G[u][w];
@@ -69,7 +71,7 @@ main(){
 
     cout << "\n\n";
 
-    DIJ(V,1);
+    DIJ(V,3);
 
     cout << "The shortest path: \n";
 	for(int i=1;i<=V;i++){
